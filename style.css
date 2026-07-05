@@ -1,0 +1,233 @@
+/* 工場のリアル、先に言っておく — 共通スタイル
+   モチーフ：機械図面の表題欄・検印
+   配色：図面用紙 #F6F7F4 / 鉄紺 #22303A / 検印朱 #C43A2F / 図面青 #2E5E8C */
+
+:root {
+  --paper: #F6F7F4;
+  --ink: #22303A;
+  --ink-weak: #5A6870;
+  --shu: #C43A2F;      /* 検印の朱 */
+  --blue: #2E5E8C;     /* 図面の青 */
+  --line: #C7CDC9;
+  --line-strong: #22303A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.mono {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  letter-spacing: 0.04em;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- ヘッダー ---------- */
+header.site {
+  border-bottom: 2px solid var(--line-strong);
+  padding: 18px 0 14px;
+}
+header.site .wrap { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
+.site-name {
+  font-family: "BIZ UDGothic", "BIZ UDPGothic", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-tag { font-size: 0.72rem; color: var(--ink-weak); }
+
+nav.global { border-bottom: 1px solid var(--line); }
+nav.global .wrap { display: flex; gap: 22px; padding-top: 8px; padding-bottom: 8px; }
+nav.global a {
+  font-size: 0.82rem; color: var(--blue); text-decoration: none; letter-spacing: 0.05em;
+}
+nav.global a:hover { text-decoration: underline; }
+
+/* ---------- 表題欄（サイトの顔） ---------- */
+.title-block {
+  margin: 40px 0 12px;
+  border: 2px solid var(--line-strong);
+  background: #FFFFFF;
+}
+.title-block table { width: 100%; border-collapse: collapse; }
+.title-block th, .title-block td {
+  border: 1px solid var(--line-strong);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+.title-block th {
+  width: 6.5em;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--ink-weak);
+  letter-spacing: 0.15em;
+  background: #EFF1EE;
+  white-space: nowrap;
+}
+.title-block td { font-size: 0.95rem; }
+.title-block td.hin {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 4.5vw, 1.7rem);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  padding: 14px 12px;
+}
+.title-block .stamp-cell { position: relative; }
+
+/* 検印 */
+.stamp {
+  display: inline-block;
+  border: 2px solid var(--shu);
+  color: var(--shu);
+  border-radius: 50%;
+  width: 2.9em; height: 2.9em;
+  line-height: 2.8em;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transform: rotate(-6deg);
+  letter-spacing: 0.05em;
+}
+
+.lead { margin: 22px 0 44px; color: var(--ink); font-size: 0.98rem; }
+.lead strong { color: var(--shu); font-weight: 700; }
+
+/* ---------- 記事一覧 ---------- */
+.section-label {
+  font-size: 0.75rem;
+  color: var(--ink-weak);
+  letter-spacing: 0.25em;
+  border-left: 4px solid var(--shu);
+  padding-left: 10px;
+  margin: 44px 0 18px;
+}
+
+ul.articles { list-style: none; }
+ul.articles li { border-bottom: 1px solid var(--line); }
+ul.articles a {
+  display: block;
+  padding: 18px 4px;
+  text-decoration: none;
+  color: var(--ink);
+}
+ul.articles a:hover { background: #FFFFFF; }
+.a-meta { display: flex; gap: 14px; align-items: center; font-size: 0.72rem; margin-bottom: 4px; }
+.a-cat { color: var(--blue); border: 1px solid var(--blue); padding: 1px 8px; }
+.a-date { color: var(--ink-weak); }
+.a-title { font-weight: 700; font-size: 1.02rem; line-height: 1.6; }
+.a-desc { font-size: 0.85rem; color: var(--ink-weak); margin-top: 4px; }
+
+/* ---------- プロフィール・本文ページ共通 ---------- */
+main.page { padding-bottom: 40px; }
+main.page h1 {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+  line-height: 1.6;
+  margin: 40px 0 8px;
+  letter-spacing: 0.03em;
+}
+main.page h2 {
+  scroll-margin-top: 18px;
+  font-size: 1.08rem;
+  margin: 44px 0 14px;
+  padding: 6px 0 6px 12px;
+  border-left: 4px solid var(--shu);
+  line-height: 1.6;
+}
+main.page h3 { font-size: 0.98rem; margin: 30px 0 10px; color: var(--ink); }
+main.page p { margin: 0 0 1.2em; }
+main.page ul, main.page ol { margin: 0 0 1.2em 1.4em; }
+main.page li { margin-bottom: 0.4em; }
+main.page strong { color: var(--shu); }
+main.page a { color: var(--blue); }
+
+/* 目次（部品表ふう） */
+.toc {
+  margin: 28px 0 40px;
+  border: 2px solid var(--line-strong);
+  background: #FFFFFF;
+}
+.toc-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--ink-weak);
+  background: #EFF1EE;
+  border-bottom: 1px solid var(--line-strong);
+  padding: 6px 14px;
+}
+main.page .toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+main.page .toc li { margin: 0; }
+main.page .toc a {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 14px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+main.page .toc a:hover { background: var(--paper); }
+.toc .toc-no {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+/* 工程表ふうの年表 */
+table.history {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 28px;
+  background: #FFFFFF;
+  font-size: 0.9rem;
+}
+table.history th, table.history td { border: 1px solid var(--line-strong); padding: 9px 12px; }
+table.history th {
+  width: 7em;
+  font-weight: 400;
+  background: #EFF1EE;
+  color: var(--ink-weak);
+  white-space: nowrap;
+}
+
+/* 免責 */
+.notice {
+  margin: 48px 0 0;
+  padding: 14px 16px;
+  border: 1px dashed var(--line);
+  font-size: 0.78rem;
+  color: var(--ink-weak);
+  background: #FFFFFF;
+}
+
+footer.site {
+  margin-top: 56px;
+  border-top: 2px solid var(--line-strong);
+  padding: 18px 0 40px;
+  font-size: 0.75rem;
+  color: var(--ink-weak);
+}
+footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 480px) {
+  .title-block th { width: 5em; letter-spacing: 0.06em; }
+  nav.global .wrap { gap: 14px; }
+}
