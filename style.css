@@ -208,6 +208,23 @@ table.history th {
   white-space: nowrap;
 }
 
+/* 収益リンク（PR）ボックス */
+.pr-box {
+  margin: 36px 0;
+  border: 2px solid var(--line-strong);
+  background: #FFFFFF;
+}
+.pr-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  color: var(--ink-weak);
+  background: #EFF1EE;
+  border-bottom: 1px solid var(--line-strong);
+  padding: 4px 14px;
+}
+.pr-body { padding: 14px 16px 4px; font-size: 0.92rem; }
+
 /* 免責 */
 .notice {
   margin: 48px 0 0;
