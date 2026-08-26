@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shisaku-taro.com/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-08-26</lastmod>
   </url>
   <url>
     <loc>https://shisaku-taro.com/profile.html</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-08-26</lastmod>
   </url>
   <url>
     <loc>https://shisaku-taro.com/buhin-maker-kitsui.html</loc>
@@ -139,5 +139,9 @@
   <url>
     <loc>https://shisaku-taro.com/natsu-fuyu.html</loc>
     <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shisaku-taro.com/kyuryo-agarikata.html</loc>
+    <lastmod>2026-08-26</lastmod>
   </url>
 </urlset>
